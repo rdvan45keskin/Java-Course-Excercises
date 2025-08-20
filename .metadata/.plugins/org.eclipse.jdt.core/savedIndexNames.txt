@@ -1,0 +1,10 @@
+INDEX VERSION 1.134+C:\Users\Rıdvan Keskin\Documents\dersler\btk\Ileri seviye java\.metadata\.plugins\org.eclipse.jdt.core
+3435648363.index
+1865797976.index
+2820753584.index
+529218392.index
+2727910131.index
+2416142029.index
+2626603008.index
+289547560.index
+380197650.index

@@ -1,0 +1,5 @@
+package com.shopping.demo.DataAccessLayer;
+
+public interface OrderReopsitory {
+
+}

@@ -1,0 +1,49 @@
+package com.hibernatedemo;
+
+
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+
+	public static void main(String[] args) {
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(City.class).buildSessionFactory();
+		Session session = factory.getCurrentSession();
+		
+		try {
+			session.beginTransaction();
+			//HQL-->Hibernate Querry Language
+			//select * from city 
+			//name countryCode falan hep citydeki private ile tanımlanan şeyler
+			//"from City c where c.countryCode='TUR' and c.district='Ankara'"
+			/*
+			List<City> cities = session.createQuery("from City c").getResultList();
+			for(City city:cities) {
+				System.out.println(city.getName());
+			}*/
+			/*
+			//group by
+			List<String> results = session.createQuery("select c.countryCode from City c GROUP BY c.countryCode").getResultList();
+			for(String result:results) {
+				System.out.println(result);
+			}
+			*/
+			List<Object[]> results = session.createQuery("select c.countryCode,MAX(c.population) from City c GROUP BY c.countryCode").getResultList();
+			for(Object[] result:results) {
+				String countryCode = (String) result[0];
+	            String cityName = (String) result[1];
+	            System.out.println("Country Code: " + countryCode + ", City Name: " + cityName);
+			}
+			session.getTransaction().commit();
+			
+		}finally {
+			factory.close();
+		}
+
+	}
+
+}

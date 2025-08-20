@@ -1,0 +1,30 @@
+package com.springdemo;
+
+import org.springframework.beans.BeansException;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception{
+		//ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("applicationContext.xml");
+
+		
+		ICustomerDal customerDal = context.getBean("database",ICustomerDal.class);
+		customerDal.add();
+		
+		//CustomerManager manager = new CustomerManager(context.getBean("database",ICustomerDal.class));
+		//manager.add();
+		
+		
+		
+		
+
+	
+	
+	}
+	//IoC - Inversion of Control
+	//Dependency Injection
+}

@@ -1,0 +1,6 @@
+#Fri Oct 18 13:51:58 GMT+03:00 2024
+__DEFAULT__=false
+expression=project explorer
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true

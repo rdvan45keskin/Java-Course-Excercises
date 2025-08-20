@@ -1,0 +1,82 @@
+package com.hibernatedemo;
+
+
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+
+	public static void main(String[] args) {
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(City.class).buildSessionFactory();
+		// Unit of Work
+		Session session = factory.getCurrentSession();
+		
+		try {
+			session.beginTransaction();
+			//HQL-->Hibernate Querry Language
+			//select * from city 
+			//name countryCode falan hep citydeki private ile tanımlanan şeyler
+			//"from City c where c.countryCode='TUR' and c.district='Ankara'"
+			//-----------------------------------
+			/*
+			List<City> cities = session.createQuery("from City c").getResultList();
+			for(City city:cities) {
+				System.out.println(city.getName());
+			}*/
+			
+			//-----------------------------------
+			//group by
+			/*
+			List<String> results = session.createQuery("select c.countryCode from City c GROUP BY c.countryCode").getResultList();
+			for(String result:results) {
+				System.out.println(result);
+			}
+			*/
+			
+			//-----------------------------------
+			//ülke kodunu ve o koda sahip en yüksek nüfuslu şehri getiriyo
+			/*
+			List<Object[]> results = session.createQuery("SELECT c1.countryCode, c1.name FROM City c1 WHERE c1.population = (SELECT MAX(c2.population) FROM City c2 WHERE c2.countryCode = c1.countryCode) ORDER BY c1.countryCode").getResultList();
+			for(Object[] result:results) {
+				String countryCode = (String) result[0];
+			    String cityName = (String) result[1];
+			    System.out.println("Ülke Kodu: " + countryCode + ", Şehir İsmi: " + cityName);
+			}
+			*/
+			
+			//-----------------------------------
+			//Insert işlemi
+			/*
+			City city = new City("Burdur 2","TUR","Akdeniz",10000);
+			
+			session.save(city);
+			*/
+			
+			//-----------------------------------
+			//Update işlemi
+			/*
+			City city = session.get(City.class,4093);	//update için kaydı bulduk
+			city.setPopulation(110000);					//veriyi değiştirdik
+			session.save(city);							//veriyi kaydettik
+			System.out.println(city.getPopulation());
+			*/
+			
+			//-----------------------------------
+			//Delete işlemi
+			City city = session.get(City.class,4093);
+			
+			
+			session.getTransaction().commit();
+			System.out.println("Şehir Güncellendi");
+			
+		}finally {
+			factory.close();
+		}
+
+	}
+
+}

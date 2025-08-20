@@ -1,0 +1,1 @@
+kütüphaneleri eliminen indirmek yerine maven ile otomatik kullanmak çok iyi

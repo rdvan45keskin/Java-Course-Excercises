@@ -1,0 +1,30 @@
+Tabii ki! İşte DAL, Business, API ve Entities kavramlarının basit açıklamaları:
+
+1. DAL (Data Access Layer)
+Tanım: DAL, veritabanı ile etkileşimde bulunan katmandır. Verilerin depolanması, güncellenmesi, silinmesi ve sorgulanması gibi işlemleri yönetir.
+Amaç: Uygulamanın veri ile ilgili tüm işlemlerini merkezi bir noktada toplamak. Bu, uygulamanın diğer katmanlarının veritabanı işlemlerini doğrudan değil, DAL üzerinden yapmasını sağlar.
+Örnek: Bir City nesnesinin veritabanında kaydedilmesi veya sorgulanması işlemleri DAL üzerinden gerçekleştirilir.
+2. Business Layer (İş Katmanı)
+Tanım: İş katmanı, uygulamanın iş kurallarını ve mantığını içerir. Veri üzerinde yapılan işlemleri yönetir ve uygulama içindeki tüm iş süreçlerini kapsar.
+Amaç: Uygulamanın iş mantığını uygulamak, kuralları denetlemek ve DAL ile API arasında bir köprü görevi görmek.
+Örnek: Bir şehrin nüfusunu artırmak veya azaltmak gibi iş kuralları burada uygulanır. İş katmanı, gerekli durumlarda DAL'den veri alır ve geri döndürür.
+3. API (Application Programming Interface)
+Tanım: API, farklı yazılımların birbirleriyle iletişim kurmasını sağlayan bir arayüzdür. Genellikle HTTP protokolü üzerinden web servisleri olarak uygulanır.
+Amaç: Uygulama ile dış dünyası arasında veri alışverişini sağlamak. Diğer sistemlerin uygulamanızın belirli özelliklerine erişimini kolaylaştırmak.
+Örnek: Bir web uygulaması, dışarıdan gelen bir HTTP isteği ile belirli şehirlerin bilgilerini sunan bir API'ye sahip olabilir.
+4. Entities (Varlıklar)
+Tanım: Entities, uygulamanın iş mantığına ait temel veri yapılarıdır. Genellikle bir veritabanındaki tablolara karşılık gelirler ve belirli özelliklere (alanlara) sahiptirler.
+Amaç: Uygulama içindeki verileri temsil etmek ve bu verilere erişimi kolaylaştırmak. Entities, uygulamanın veri modelini oluşturur.
+Örnek: Bir City varlığı, id, name, population, countryCode gibi alanlara sahip olabilir.
+Özet
+DAL: Veritabanı ile etkileşimi yönetir.
+Business Layer: Uygulamanın iş mantığını uygular.
+API: Dış dünya ile veri alışverişini sağlar.
+Entities: Uygulama verilerini temsil eder.
+Bu kavramlar, genellikle bir uygulamanın mimarisini oluştururken önemli bir rol oynar ve uygulamanın sürdürülebilirliğini artırır.
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+package com.javacourse.project.hibernateAndJpa.DataAccessLayer;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.javacourse.project.hibernateAndJpa.Entities.City;
+
+import jakarta.persistence.EntityManager;
+//	JPA -- ORM	//
+@Repository
+public class HibernateCityDal implements ICityDal{
+	
+	private EntityManager entityManager;
+	
+	@Autowired	//factory falan uğraşmıcaz otomatik bu yapcak 
+	//altta constructor injection yaptık
+	public HibernateCityDal(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+	// AOP --Aspect Oriented Programming
+	@Override
+	@Transactional	//açma kapama kodlarını otomatik koyuyomuş
+	public List<City> getAll() {
+		//jpa gerekli olan her enjeksiyonu yapıyo çok iyimiş
+		Session session = entityManager.unwrap(Session.class);
+		List<City> cities = session.createQuery("from City",City.class).getResultList();
+		return cities;
+	}
+
+	@Override
+	@Transactional
+	public void add(City city) {
+		Session session = entityManager.unwrap(Session.class);
+		session.persist(city);
+		
+	}
+
+	@Override
+	@Transactional
+	public void update(City city) {
+		Session session = entityManager.unwrap(Session.class);
+		session.merge(city);
+	}
+
+	@Override
+	@Transactional
+	public void delete(City city) {
+		Session session = entityManager.unwrap(Session.class);
+		// Veritabanında bu nesnenin var olup olmadığını kontrol edebilir ve silme işlemini gerçekleştirebilirsiniz.
+	    if (session.contains(city)) {
+	        session.delete(city);  // Nesne persistent durumda ise silme işlemini gerçekleştirir.
+	    } else {
+	        // Eğer nesne persistent değilse (örneğin, detached ise), önce merge() ile persistent hale getirip ardından silebilirsiniz.
+	        City mergedCity = (City) session.merge(city);
+	        session.delete(mergedCity);
+	    }
+		
+	}
+	@Override
+	public City getById(int id) {
+		Session session = entityManager.unwrap(Session.class);
+		City city = session.get(City.class, id);
+		return city;
+	}
+
+}

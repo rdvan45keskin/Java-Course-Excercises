@@ -1,0 +1,17 @@
+//Data access layer katmanı yani en alt katman
+
+
+package com.javacourse.project.hibernateAndJpa.DataAccessLayer;
+import java.util.List;
+
+import com.javacourse.project.hibernateAndJpa.Entities.City;	//cityi import ettik
+
+
+public interface ICityDal {
+	List<City> getAll();
+	List<Object[]> getSelectedColumns();
+	void add(City city);
+	void update(City city);
+	void delete(City city);
+	City getById(int id);
+}
