@@ -1,6 +1,6 @@
 # Java-Course-Excercises
 
-Bu depo, farklı Java teknolojilerini kullanarak geliştirdiğim çeşitli uygulamaları içermektedir.  
+Bu depo, aldığım kurs ile birlikte farklı Java teknolojilerini kullanarak geliştirdiğim çeşitli uygulamaları içermektedir.  
 Projeler, temel Java kavramlarından ileri düzey framework’lere kadar çeşitli teknolojileri kapsamaktadır.
 
 ## İçerik
