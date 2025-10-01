@@ -1,0 +1,12 @@
+Inheritance (Kalıtım), nesne yönelimli programlamada (OOP) temel bir kavramdır ve bir sınıfın (alt sınıf veya türetilmiş sınıf) başka bir sınıftan (üst sınıf veya temel sınıf) özellikler (metotlar ve değişkenler) edinmesini sağlar. Kalıtım, kodun yeniden kullanılabilirliğini artırır ve hiyerarşik bir ilişki oluşturarak kod yapısını düzenler.
+
+Kalıtımın Temel Özellikleri:
+Kod Yeniden Kullanımı: Alt sınıflar, üst sınıfın metotlarını ve değişkenlerini miras alarak yeniden kullanabilir, bu da kodun tekrarlanmasını önler.
+
+Üst Sınıf ve Alt Sınıf:
+
+Üst Sınıf (Base Class): Diğer sınıflar tarafından kalıtılan sınıf.
+Alt Sınıf (Derived Class): Üst sınıftan miras alan sınıf.
+Polimorfizm: Kalıtım, polimorfizmi (çok biçimlilik) destekler. Bu, aynı metot adının farklı sınıflarda farklı şekillerde kullanılabilmesini sağlar.
+
+Erişim Belirleyicileri: Alt sınıflar, üst sınıfın belirli erişim belirleyicilerine (private, protected, public) bağlı olarak üst sınıfın üyelerine erişebilir.

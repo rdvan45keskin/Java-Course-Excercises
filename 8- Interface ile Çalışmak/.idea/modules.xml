@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/16- Interface ile Çalışmak.iml" filepath="$PROJECT_DIR$/.idea/16- Interface ile Çalışmak.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interfaceler ile calismak ve polymorphism kullanma/Interfaceler ile calismak ve polymorphism kullanma.iml" filepath="$PROJECT_DIR$/Interfaceler ile calismak ve polymorphism kullanma/Interfaceler ile calismak ve polymorphism kullanma.iml" />
+      <module fileurl="file://$PROJECT_DIR$/interfaceDemo/interfaceDemo.iml" filepath="$PROJECT_DIR$/interfaceDemo/interfaceDemo.iml" />
+    </modules>
+  </component>
+</project>

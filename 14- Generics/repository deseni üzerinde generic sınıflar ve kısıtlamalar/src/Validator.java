@@ -1,0 +1,6 @@
+//nesnenin kurallara ugyun olup olmadığını kontrol etmeye yarıyormuş bu
+public class Validator {
+    public <T extends IEntity> void validate(T entity){
+        
+    }
+}
